@@ -12,6 +12,12 @@
     font-weight: 400;
 }
 
+.headerOption__icon{
+    object-fit: contain;
+    height: 40px !important;
+    width: 40px !important;
+}
+
 .headerOption:hover{
     color: black;
 }
