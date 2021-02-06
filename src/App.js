@@ -1,4 +1,3 @@
-import { Feedback } from '@material-ui/icons';
 import React from 'react';
 import './App.css';
 import Header from './components/Header/Header.component';
