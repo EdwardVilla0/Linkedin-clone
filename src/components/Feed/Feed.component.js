@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CreateIcon from '@material-ui/icons/Create';
 import InputOption from '../InputOption/InputOption.component';
 import ImageIcon from '@material-ui/icons/Image'
@@ -9,6 +9,8 @@ import Post from '../Post/Post.component';
 import './Feed.styles.css'
 
 function Feed() {
+    const [posts, setPosts] = useState([]);
+
     return (
         <div className="feed">
             <div className="feed__inputContainer">
@@ -27,6 +29,9 @@ function Feed() {
 
                 </div>
             </div>
+            {posts.map((post) => (
+                <Post />
+            ))}
             <Post name="me" description="testing" message="it worked" />
         </div>
     )
