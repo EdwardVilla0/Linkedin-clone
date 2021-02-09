@@ -5,6 +5,7 @@ import ImageIcon from '@material-ui/icons/Image'
 import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
 import EventNoteIcon from '@material-ui/icons/EventNote';
 import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay';
+import Post from '../Post/Post.component';
 import './Feed.styles.css'
 
 function Feed() {
@@ -26,6 +27,7 @@ function Feed() {
 
                 </div>
             </div>
+            <Post name="me" description="testing" message="it worked" />
         </div>
     )
 }
