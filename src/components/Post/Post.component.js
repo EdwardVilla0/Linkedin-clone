@@ -1,5 +1,4 @@
 import { Avatar } from '@material-ui/core'
-import { ChatOutlined, SendOutlined, ThumbUpAltOutlined } from '@material-ui/icons'
 import React from 'react'
 import InputOption from '../InputOption/InputOption.component'
 import './Post.styles.css'
