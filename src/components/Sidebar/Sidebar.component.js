@@ -18,9 +18,11 @@ function Sidebar() {
         <div className="sidebar">
             <div className="sidebar__top">
                 <img src="https://images.unsplash.com/photo-1612455897608-ea374d1e87f2?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOTd8fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" />
-                <Avatar className="sidebar__avatar" />
-                <h2>Eduardo Villasenor</h2>
-                <h4>eduardovillasenor@gmail.com</h4>
+                <Avatar src={user.photoUrl} className="sidebar__avatar" >
+                    {user.email[0]}
+                </Avatar>
+                <h2>{user.displayName}</h2>
+                <h4>{user.email}</h4>
             </div>
             <div className="sidebar__stats">
                 <div className="sidebar__stat">

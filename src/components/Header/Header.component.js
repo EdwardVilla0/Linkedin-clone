@@ -11,7 +11,10 @@ import { useDispatch } from 'react-redux';
 import { auth } from '../../firebase';
 import { logout } from '../../features/userSlice';
 
+
+
 function Header() {
+
     const dispatch = useDispatch()
     const logoutOfApp = () => {
         dispatch(logout())
@@ -34,7 +37,8 @@ function Header() {
                 <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
                 <HeaderOption Icon={ChatIcon} title="Messaging" />
                 <HeaderOption Icon={NotificationIcon} title="Notifications" />
-                <HeaderOption avatar="https://media-exp1.licdn.com/dms/image/C5603AQGxhJKSQurNHw/profile-displayphoto-shrink_100_100/0/1604963079350?e=1617840000&v=beta&t=uiMTVLUnxFQTJIQqx5Vu3EfOZ6rEjdO_cnqIl0libiY"
+                <HeaderOption
+                    avatar={true}
                     title="me"
                     onClick={logoutOfApp} />
             </div>
