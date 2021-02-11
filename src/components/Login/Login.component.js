@@ -5,10 +5,10 @@ import { login } from '../../features/userSlice'
 import './Login.styles.css';
 
 function Login() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [name, setName] = useState('');
-    const [profilePic, setProfilePic] = useState('');
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
+    const [profilePic, setProfilePic] = useState("");
     const dispatch = useDispatch();
 
 
@@ -18,24 +18,24 @@ function Login() {
     };
     const register = () => {
         if (!name) {
-            return alert('Please enter a full name')
+            return alert("You must enter a full name!")
         }
 
         auth.createUserWithEmailAndPassword(email, password)
             .then((userAuth) => {
                 userAuth.user.updateProfile({
                     displayName: name,
-                    photoURL: profilePic,
+                    photoURL: profilePic
                 })
                     .then(() => {
                         dispatch(login({
                             email: userAuth.user.email,
                             uid: userAuth.user.uid,
                             displayName: name,
-                            photoURL: profilePic,
+                            photoURL: profilePic
                         }))
                     })
-            })
+            }).catch((err) => alert(err.message))
     }
 
     return (
@@ -45,28 +45,11 @@ function Login() {
                 alt="linked in logo" />
 
             <form>
-                <input
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="full name(required if registering)"
-                    type="text" />
-                <input
-                    value={profilePic}
-                    onChange={(e) => setProfilePic(e.target.value)}
-                    placeholder="Profile pic URL(optional)"
-                    type="text" />
-                <input
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="email"
-                    type="email" />
-                <input
-                    value={password}
-                    onChange={(e) => setPassword(e.target.password)}
-                    placeholder="password"
-                    type="password" />
+                <input value={name} onChange={e => setName(e.target.value)} placeholder="Full Name (required if registering)" type="text" />
+                <input value={profilePic} onChange={e => setProfilePic(e.target.value)} placeholder="Profile Pic URL (optional)" type="text" />
+                <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" type="text" />
+                <input value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" type="password" />
                 <button type="submit" onClick={loginToApp}>Sign In</button>
-
             </form>
 
             <p>Not a member?
