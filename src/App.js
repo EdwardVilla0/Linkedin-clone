@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import Header from './components/Header/Header.component';
 import Sidebar from './components/Sidebar/Sidebar.component';
+import Widgets from './components/Widgets/Widgets.component';
 import Feed from './components/Feed/Feed.component'
 import { logout, selectUser, login } from './features/userSlice';
 import { useSelector, useDispatch } from 'react-redux';
@@ -27,6 +28,7 @@ function App() {
       }
     })
 
+
   }, [])
 
   return (
@@ -38,6 +40,7 @@ function App() {
         (<div className="app__body">
           <Sidebar />
           <Feed />
+          <Widgets />
         </div>)
       }
 
